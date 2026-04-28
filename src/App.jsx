@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useActionState } from 'react'
 import { grid } from 'ldrs'
 
+
 grid.register()
 import Search from './components/Search'
+import MovieCard from './components/MovieCard';
 
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
@@ -32,7 +34,7 @@ const App = () => {
 
     try {
 
-      const endpoint = `${API_BASE_URL}/movie/top_rated?language=en-US&page=1`;
+      const endpoint = `${API_BASE_URL}/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`;
       
       const response = await fetch(endpoint, API_OPTIONS);
 
@@ -85,7 +87,7 @@ const App = () => {
           ): (
             <ul>
               {movieList.map((movie)=>(
-                <li key={movie.id} className='text-white'>{movie.title}</li>
+                <MovieCard key={movie.id} movie={movie}/>
               ))}
             </ul>
           )}
