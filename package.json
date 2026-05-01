@@ -12,10 +12,12 @@
   "dependencies": {
     "@lordicon/react": "^1.11.0",
     "@tailwindcss/vite": "^4.2.4",
+    "appwrite": "^25.0.0",
     "ldrs": "^1.1.9",
     "lottie-react": "^2.4.1",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
+    "react-use": "^17.6.0",
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
